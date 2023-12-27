@@ -1,0 +1,59 @@
+{% block InterpolationMode %}
+
+    <div style="display: block; width: 500px; height: 500px; margin-left: 30%">
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+
+    <script>
+
+        var datapoints = [0, 20, 20, 60, 60, 120];
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["0", "1", "2", "3", "4", "5"],
+                datasets: [{
+                    data: datapoints,
+                    borderColor: window.chartColors.green,
+                    cubicInterpolationMode: 'monotone',
+                    fill: false
+                }, {
+                    data: datapoints,
+                    borderColor: window.chartColors.blue,
+                    fill: false,
+                    cubicInterpolationMode: 'monotone'
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                responsive: true,
+                tooltips: {
+                    mode: 'index'
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        },
+                        ticks: {
+                            suggestedMin: -10,
+                            suggestedMax: 200,
+                        }
+                    }]
+                }
+            }
+        };
+        var ctx = document.getElementById("canvas").getContext("2d");
+        new Chart.Line(ctx, config);
+    </script>
+{% endblock %}

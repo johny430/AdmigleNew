@@ -1,0 +1,41 @@
+@font-face {
+    font-family: Montserrat ;
+    src: url('../fonts/Montserrat-Medium.ttf');
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+.header_main_page {
+    background: blue;
+    width: 100vw;
+}
+
+.container {
+    width: 90%;
+}
+
+.header_content {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title_site {
+    color: #fff;
+    margin: 0 40px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.buttons_block button {
+    height: 30px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid blue;
+    margin: 2px;
+
+}
